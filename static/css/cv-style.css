@@ -1,0 +1,80 @@
+/* Normalize few things */
+.cv * {
+    margin: 0;
+    padding: 0;
+}
+
+/* CV heading with photo */
+.cv>.cv-head {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 25px;
+    align-items: center;
+}
+
+.cv>.cv-head>.cv-info {
+    line-height: 1.9em;
+}
+
+.cv>.cv-head>.cv-info h1 {
+    font-size: 2.5em;
+    text-shadow: 0 0 black;
+    padding-bottom: 10px;
+}
+
+.cv>.cv-head>.cv-photo {
+    outline: 3px solid #383838;
+    outline-offset: 3px;
+    outline-style: auto;
+}
+
+.cv>.cv-head>.cv-info>h1 {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.cv>.cv-content {
+    padding-top: 10px;
+    padding-bottom: 25px;
+    font-size: 90%;
+}
+
+/* CV details type-1 */
+.cv>.cv-detail.detail-type-1 {
+    display: grid;
+    grid-template: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+/* 
+.cv .cv-exp-header1 {
+    margin-top: 25px;
+}
+.cv .cv-exp-header2 {
+    font-size: 125%;
+    color: cadetblue;
+}
+.cv .institution {
+    font-weight: bolder;
+}
+.cv .cv-extra {
+    padding-top: 10px;
+    padding-bottom: 25px;
+    font-size: 90%;
+}
+.cv-content p {
+    padding-top: 25px;
+    text-align: left;
+    hyphens: none;
+}
+.cv-detail :is(.row-1, .row-2) {
+    display: inline-grid;
+    grid-template-columns: auto auto 1fr;
+    width: 100%;
+    justify-items: end;
+}
+.cv-detail .faculty:before {
+    content: ", "
+}
+.cv-detail .department:before {
+    content: ", "
+} */

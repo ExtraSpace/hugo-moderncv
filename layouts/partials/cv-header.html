@@ -1,0 +1,39 @@
+<div class="cv-head" id="cv-head">
+  <div id="cv-photo" class="cv-photo">
+    <img
+      width="100%"
+      src="{{ .Site.Data.cv.photo | absURL }}"
+      alt="{{ .Site.Data.name }}"
+    />
+  </div>
+  <div id="cv-info" class="cv-info">
+    <h1 class="cv-title" id="cv-title">{{ index .Site.Data.cv "name" }}</h1>
+    <div class="cv-address">{{ index .Site.Data.cv "address" }}</div>
+    <div class="cv-phone">
+      <i class="fa fa-mobile"></i>
+      {{ index .Site.Data.cv "contact" "phone"}}
+    </div>
+    <div class="cv-email">
+      {{ range .Site.Data.cv.contact.email }}
+      <span>
+        <i class="fa fa-envelope"></i>
+        <a href="mailto:{{ . }}">{{ . }}</a>
+      </span>
+      {{ end }}
+    </div>
+    <div class="cv-social">
+      {{ range .Site.Data.cv.social }} {{ range $key, $value := .}}
+      <span>
+        <i class="fab fa-{{ $key }}"></i>
+        <a href='{{ index $value "url" }}'>{{ index $value "name" }}</a>
+      </span>
+      {{ end }} {{ end }}
+    </div>
+    {{ if (index .Site.Data.cv "certificate") }}
+    <div class="cv-certification">
+      Certifications: {{ range (index .Site.Data.cv "certificate") }}
+      <span> {{ . }} </span> {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</div>

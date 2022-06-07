@@ -1,0 +1,61 @@
+<h1 class="cv-header1">Experiences</h1>
+<h2 class="cv-header2">Research</h2>
+{{ range (index .Site.Data.cv "experiences" "research") }}
+<div class="cv-detail detail-type-1">
+  <div class="row-1">
+    <p class="info-1" id="institution">{{ .institution }}</p>
+    <p class="info-2" id="faculty">{{ .faculty }}</p>
+    <p class="info-3" id="address">{{ .address }}</p>
+  </div>
+  <div class="row-2">
+    <p class="info-4" id="position">{{ .position }}</p>
+    <p class="info-5" id="department">{{ .department }}</p>
+    <p class="info-6" id="duration">
+      <span class="from">{{ .from }}</span> &mdash;
+      <span class="to">{{ .to }}</span>
+    </p>
+  </div>
+  <div class="row-3">
+    <p class="info-7" id="cv-extra">{{ .extra }}</p>
+  </div>
+</div>
+{{ end }}
+
+<h2 class="cv-exp-header2">Consultation & Advising</h2>
+{{ range (index .Site.Data.cv "experiences" "consultation") }}
+<div class="cv-detail">
+  <div class="row-1">
+    <p class="institution">{{ .institution }}</p>
+    <p class="faculty">{{ .faculty }}</p>
+    <p class="address">{{ .address }}</p>
+  </div>
+  <div class="row-2">
+    <p class="position">{{ .position }}</p>
+    <p class="department">{{ .department }}</p>
+    <p class="duration">
+      <span class="from">{{ .from }}</span> &mdash;
+      <span class="to">{{ .to }}</span>
+    </p>
+  </div>
+</div>
+<p class="cv-extra">{{ .extra }}</p>
+{{ end }} {{ with .Site.Data.cv.experiences.teaching }}
+
+<h1 class="cv-exp-header2">Teaching</h1>
+{{ range . }}
+<div class="cv-detail">
+  <h3 class="row-1">
+    <span class="institution">{{ .name }}</span>
+    <span></span>
+    <span class="address">{{ .address }}</span>
+  </h3>
+  {{ range .courses }}
+  <div class="row-2">
+    <p class="course">{{ .name }}</p>
+    <p></p>
+    <p class="duration">{{ .period }}</p>
+  </div>
+  <div class="cv-extra">{{ .extra }}</div>
+  {{ end }}
+</div>
+{{ end }} {{ end }}
