@@ -1,1 +1,15 @@
-<h1>CV Languages</h1>
+<h1 class="cv-header1">Languages</h1>
+<div class="cv-details cv-lang-details">
+{{ range index .Site.Data.cv "languages" }}
+<div class="cv-detail cv-languages">
+{{ range $key, $value := . }}
+<h2 class="cv-header2">{{ $key }}</h2>
+<dl class="cv-language" id="cv-language">
+{{ range $k, $v := $value }}
+<dt>{{ $k }}</dt><dd>{{ $v }}</dd>
+{{ end }}
+</dl>
+{{ end }}
+</div>
+{{ end }}
+</div>

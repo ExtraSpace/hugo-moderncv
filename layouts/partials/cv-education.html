@@ -1,1 +1,50 @@
-<h1>CV Education</h1>
+<h1 class="cv-header1">Education</h1>
+
+<h2 class="cv-header2" data-bs-toggle="collapse" href="#pub-entry" role="button" aria-controls="pub-entry">Dissertations and Publications</h2>
+<div class="cv-detail cv-pub-entry collapse" id="pub-entry">
+<h3 class="cv-header3" data-bs-toggle="collapse" href="#ms-thesis-entry" role="button" aria-controls="ms-thesis-entry">Masters Thesis</h3>
+<div class="cv-detail cv-bib-entry collapse" id="ms-thesis-entry" aria-controls="ms-thesis-entry">
+{{ range index .Site.Data.cv "education" "publications" "masters" "thesis" }}
+<p id="ms-thesis">{{ .bib | markdownify }}</p>
+<p id="ms-thesis-url" class="doi text-end">DOI: <a href="{{ .url }}">{{ .url }}</a></p>
+{{ end }}
+</div>
+<h3 class="cv-header3" data-bs-toggle="collapse" href="#phd-papers-entry" role="button" aria-controls="phd-papers-entry">PhD Papers</h3>
+<div class="cv-detail cv-bib-entry collapse" id="phd-papers-entry">
+    {{ range index .Site.Data.cv "education" "publications" "phd" "papers" }}
+        <p id="phd-papers">{{ .bib | markdownify }}</p>
+        <p id="phd-papers-url" class="doi text-end">DOI: <a href="{{ .url }}">{{ .url }}</a></p>
+    {{ end }}
+</div>
+<h3 class="cv-header3" data-bs-toggle="collapse" href="#phd-thesis-entry" role="button" aria-controls="phd-thesis-entry">PhD Thesis</h3>
+<div class="cv-detail cv-bib-entry collapse" id="phd-thesis-entry">
+    {{ range index .Site.Data.cv "education" "publications" "phd" "thesis" }}
+        <p id="phd-thesis">{{ .bib | markdownify }}</p>
+        <p id="phd-thesis-url" class="doi text-end">DOI: <a href="{{ .url }}">{{ .url }}</a></p>
+    {{ end }}
+</div>
+</div>
+
+<h2 class="cv-header2" data-bs-toggle="collapse" href="#conference-entry" role="button" aria-controls="conference-entry">Conference Participation</h2>
+<div class="cv-detail cv-conf-entries collapse" id="conference-entry">
+{{ range index .Site.Data.cv "education" "conferences" }}
+<div class="cv-conf-entry">
+<p class="info-1" id="conf-name">{{ .name }}</p>
+<p class="info-2" id="conf-location">{{ .location }}</p>
+<p id="conf-title" class="info-3">{{ .title }}</p>
+<p id="conf-period" class="info-4">{{ .period }}</p>
+</div>
+{{ end }}
+</div>
+
+<h2 class="cv-header2" data-bs-toggle="collapse" href="#academic-entry" role="button" aria-controls="academic-entry">Academic Qualifications</h2>
+<div class="cv-detail cv-acdmy-entries collapse" id="academic-entry">
+{{ range index .Site.Data.cv "education" "academic" }}
+<div class="cv-acdmy-entry">
+<p class="info-1" id="institution">{{ .institution }}</p>
+<p class="info-2" id="addess">{{ .address }}</p>
+<p class="info-3" id="degree">{{ .degree }}</p>
+<p class="info-4" id="period">{{ .from }}&mdash;{{ .to }}</p>
+</div>
+{{ end }}
+</div>
