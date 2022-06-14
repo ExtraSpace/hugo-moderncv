@@ -187,10 +187,10 @@ h3.cv-header3 {
     margin-left: 15px;
 }
 
-.cv>.cv-details>.cv-detail.cv-languages>dl.cv-language {
+.cv>.cv-details>.cv-detail.cv-languages>.cv-language>dl {
     display: grid;
     grid-template-columns: auto auto;
-    justify-content: start;
+    justify-content: stretch;
     grid-column-gap: 15px;
 }
 .cv>.cv-details.cv-lang-details {

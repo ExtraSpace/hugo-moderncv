@@ -3,12 +3,14 @@
 {{ range index .Site.Data.cv "languages" }}
 <div class="cv-detail cv-languages">
 {{ range $key, $value := . }}
-<h2 class="cv-header2">{{ $key }}</h2>
-<dl class="cv-language" id="cv-language">
+<h2 class="cv-header2" data-bs-toggle="collapse" href="#cv-language" role="button" aria-controls="cv-language">{{ $key }}</h2>
+<div class="cv-language collapse" id="cv-language" aria-controls="cv-language">
+<dl>
 {{ range $k, $v := $value }}
 <dt>{{ $k }}</dt><dd>{{ $v }}</dd>
 {{ end }}
 </dl>
+</div>
 {{ end }}
 </div>
 {{ end }}
